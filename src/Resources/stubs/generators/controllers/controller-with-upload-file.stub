@@ -5,6 +5,7 @@ use {{modelPath}};
 use {{requestPath}};
 use Yajra\DataTables\Facades\DataTables;
 use Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class {{modelNameSingularPascalCase}}Controller extends Controller
 {

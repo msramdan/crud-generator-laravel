@@ -3,34 +3,29 @@
 @section('title', __('Create Module'))
 
 @push('css')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endpush
 
 @section('content')
-    <div class="page-heading">
-        <div class="page-title">
-            <div class="row">
-                <div class="col-12 col-md-8 order-md-1 order-last">
-                    <h3>{{ __('Generators') }}</h3>
-                    <p class="text-subtitle text-muted">
-                        {{ __('Create a new CRUD Module.') }}
-                    </p>
+    <div class="page-body">
+        <div class="container-fluid">
+            <div class="page-header" style="margin-top: 5px">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3>{{ __('Generators') }}</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">{{ __('Dashboard') }}</a></li>
+                            <li class="breadcrumb-item active">{{ __('Generators') }}</li>
+                        </ol>
+                    </div>
+                    <div class="col-sm-6">
+                    </div>
                 </div>
-
-                <x-breadcrumb>
-                    <li class="breadcrumb-item">
-                        <a href="/">{{ __('Dashboard') }}</a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                        {{ __('Generators') }}
-                    </li>
-                </x-breadcrumb>
             </div>
         </div>
-
-        <section class="section">
-            <x-alert></x-alert>
-
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -41,13 +36,13 @@
 
                                 @include('generator::include.form')
 
-                                <a href="{{ url()->previous() }}" id="btn-back" class="btn btn-secondary">{{ __('Back') }}</a>
+                                <a href="{{ url()->previous() }}" id="btn-back"
+                                    class="btn btn-secondary">{{ __('Back') }}</a>
 
                                 <button type="submit" id="btn-save" class="btn btn-primary">{{ __('Generate') }}</button>
                             </form>
                         </div>
                     </div>
-
                     <div id="validation-errors" style="display: none;">
                         <div class="alert alert-danger fade show" role="alert">
                             <h4 class="alert-heading">Error</h4>
@@ -56,7 +51,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 @endsection
 

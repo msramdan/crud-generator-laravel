@@ -4,6 +4,7 @@
 use {{modelPath}};
 use {{requestPath}};
 use Yajra\DataTables\Facades\DataTables;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class {{modelNameSingularPascalCase}}Controller extends Controller
 {
@@ -53,10 +54,9 @@ class {{modelNameSingularPascalCase}}Controller extends Controller
     {
         {{passwordFieldStore}}{{inputMonths}}
         {{insertDataAction}}
+        Alert::toast('The {{modelNameSingularCamelCase}} was created successfully.', 'success');
+        return redirect()->route('{{modelNamePluralKebabCase}}.index');
 
-        return redirect()
-            ->route('{{modelNamePluralKebabCase}}.index')
-            ->with('success', __('The {{modelNameSingularCamelCase}} was created successfully.'));
     }
 
     /**
@@ -92,10 +92,9 @@ class {{modelNameSingularPascalCase}}Controller extends Controller
     {
         {{passwordFieldUpdate}}{{inputMonths}}
         {{updateDataAction}}
-
+        Alert::toast('The {{modelNameSingularCamelCase}} was updated successfully.', 'success');
         return redirect()
-            ->route('{{modelNamePluralKebabCase}}.index')
-            ->with('success', __('The {{modelNameSingularCamelCase}} was updated successfully.'));
+            ->route('{{modelNamePluralKebabCase}}.index');
     }
 
     /**
@@ -108,14 +107,11 @@ class {{modelNameSingularPascalCase}}Controller extends Controller
     {
         try {
             ${{modelNameSingularCamelCase}}->delete();
-
-            return redirect()
-                ->route('{{modelNamePluralKebabCase}}.index')
-                ->with('success', __('The {{modelNameSingularCamelCase}} was deleted successfully.'));
+            Alert::toast('The {{modelNameSingularCamelCase}} was deleted successfully.', 'success');
+            return redirect()->route('{{modelNamePluralKebabCase}}.index');
         } catch (\Throwable $th) {
-            return redirect()
-                ->route('{{modelNamePluralKebabCase}}.index')
-                ->with('error', __("The {{modelNameSingularCamelCase}} can't be deleted because it's related to another table."));
+            Alert::toast('The {{modelNameSingularCamelCase}} cant be deleted because its related to another table.', 'error');
+            return redirect()->route('{{modelNamePluralKebabCase}}.index');
         }
     }
 }
