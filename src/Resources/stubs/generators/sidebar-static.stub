@@ -46,7 +46,7 @@
                 <li class="sidebar-item{{ request()->is('/') || request()->is('dashboard') ? ' active' : '' }}">
                     <a class="sidebar-link" href="/">
                         <i class="bi bi-speedometer"></i>
-                        <span> {{ __('Dashboard') }}</span>
+                        <span> Dashboard</span>
                     </a>
                 </li>
 

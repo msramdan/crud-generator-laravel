@@ -46,7 +46,7 @@
                 <li class="sidebar-item{{ request()->is('/') || request()->is('dashboard') ? ' active' : '' }}">
                     <a class="sidebar-link" href="/">
                         <i class="bi bi-speedometer"></i>
-                        <span> {{ __('Dashboard') }}</span>
+                        <span> Dashboard</span>
                     </a>
                 </li>
 
@@ -64,7 +64,8 @@
                                     @if (empty($menu['submenus']))
                                         @can($menu['permission'])
                                             <li class="sidebar-item{{ is_active_menu($menu['route']) }}">
-                                                <a href="{{ route(str($menu['route'])->remove('/')->plural() . '.index') }}" class="sidebar-link">
+                                                <a href="{{ route(str($menu['route'])->remove('/')->plural() . '.index') }}"
+                                                    class="sidebar-link">
                                                     {!! $menu['icon'] !!}
                                                     <span>{{ __($menu['title']) }}</span>
                                                 </a>
@@ -80,8 +81,9 @@
                                                 @canany($menu['permissions'])
                                                     @foreach ($menu['submenus'] as $submenu)
                                                         @can($submenu['permission'])
-                                                            <li class="submenu-item{{  is_active_menu($submenu['route']) }}">
-                                                                <a href="{{ route(str($submenu['route'])->remove('/')->plural() . '.index') }}">
+                                                            <li class="submenu-item{{ is_active_menu($submenu['route']) }}">
+                                                                <a
+                                                                    href="{{ route(str($submenu['route'])->remove('/')->plural() . '.index') }}">
                                                                     {{ __($submenu['title']) }}
                                                                 </a>
                                                             </li>

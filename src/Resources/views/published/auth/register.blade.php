@@ -20,10 +20,12 @@
                 @if ($errors->any())
                     <div class="alert alert-danger alert-dismissible show fade">
                         <ul class="ms-0 mb-0">
-                        @foreach ($errors->all() as $error)
-                            <li><p>{{ $error }}</p></li>
-                        @endforeach
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            @foreach ($errors->all() as $error)
+                                <li>
+                                    <p>{{ $error }}</p>
+                                </li>
+                            @endforeach
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </ul>
                     </div>
                 @endif

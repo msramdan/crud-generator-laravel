@@ -16,7 +16,7 @@
                     <div class="col-sm-6">
                         <h3>{{ __('Generators') }}</h3>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">{{ __('Dashboard') }}</a></li>
+                            <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
                             <li class="breadcrumb-item active">{{ __('Generators') }}</li>
                         </ol>
                     </div>

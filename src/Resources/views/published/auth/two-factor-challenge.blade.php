@@ -49,7 +49,8 @@
                     </div>
 
                     <div class="form-group position-relative has-icon-left mb-4">
-                        <input type="text" class="form-control form-control-xl @error('recovery_code') is-invalid @enderror"
+                        <input type="text"
+                            class="form-control form-control-xl @error('recovery_code') is-invalid @enderror"
                             placeholder="Recovery Code" name="recovery_code" autocomplete="recovery_code">
                         <div class="form-control-icon">
                             <i class="bi bi-shield-lock"></i>
